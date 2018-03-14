@@ -1,17 +1,25 @@
 import React, {Component} from 'react';
-import {Provider} from "react-redux";
-import {store} from "./models/store";
+import PropTypes from 'prop-types';
+
+import Layout from "./components/Layout/Layout";
+import {connect} from "react-redux";
 
 class App extends Component {
+    static propTypes = {
+        dispatch: PropTypes.func
+    };
+
+    componentDidMount() {
+        const {dispatch} = this.props;
+
+        dispatch.colors.fetchColors();
+    }
+
     render() {
         return (
-            <Provider store={store}>
-                <div>
-                    dupa
-                </div>
-            </Provider>
+            <Layout/>
         );
     }
 }
 
-export default App;
+export default connect()(App);

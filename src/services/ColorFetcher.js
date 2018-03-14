@@ -2,7 +2,7 @@ const defaultApiUrl = process.env.REACT_APP_CT_API_URL;
 
 export default class ColorFetcher {
     endpoint = defaultApiUrl;
-    http = fetch;
+    http = window.fetch.bind(window);
 
     constructor({endpoint, http} = {}) {
         this.endpoint = endpoint ? endpoint : this.endpoint;

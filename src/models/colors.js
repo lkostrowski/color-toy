@@ -6,6 +6,7 @@ const fetcher = new ColorFetcher();
 const colors = {
     state: {
         colorsList: [],
+        activeColor: null,
         fetchState: null
     },
     reducers: {
@@ -16,6 +17,10 @@ const colors = {
             colorsList: payload
         }),
         setFetchFailed: (state) => ({...state, fetchState: FETCH_STATES.FAIL}),
+        setActiveColor: (state, {color}) => ({
+            ...state,
+            activeColor: color
+        })
 
     },
     effects: {
