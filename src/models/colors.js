@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import ColorFetcher from '../services/ColorFetcher';
 import {FETCH_STATES} from "../constants";
 
@@ -6,7 +7,7 @@ const fetcher = new ColorFetcher();
 const colors = {
     state: {
         colorsList: [],
-        activeColor: null,
+        activeColor: '#fff',
         fetchState: null
     },
     reducers: {
@@ -17,7 +18,7 @@ const colors = {
             colorsList: payload
         }),
         setFetchFailed: (state) => ({...state, fetchState: FETCH_STATES.FAIL}),
-        setActiveColor: (state, {color}) => ({
+        setActiveColor: (state, color) => ({
             ...state,
             activeColor: color
         })
@@ -37,5 +38,12 @@ const colors = {
         }
     }
 };
+
+const IColor = PropTypes.shape({
+    hex: PropTypes.string,
+    name: PropTypes.string
+});
+
+export {IColor};
 
 export default colors;

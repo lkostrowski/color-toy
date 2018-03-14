@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import glamorous from 'glamorous';
-import ColorPicker from "../ColorPicker/ColorPicker";
+import {rgba} from "polished";
+import ColorPickerContainer from "../ColorPicker/ColorPickerContainer";
 
 const PageWrapper = glamorous.div({
         width: '100vw',
@@ -10,21 +11,21 @@ const PageWrapper = glamorous.div({
         position: 'relative'
     },
     props => ({
-        backgroundColor: props.color
+        backgroundColor: rgba(props.color, 0.5)
     }));
 
 const FloatingContainer = glamorous.aside({
     position: 'absolute',
-    height: 'calc(100vh - 4rem)',
-    width: '20rem',
-    top: '4rem',
+    width: '30rem',
+    top: '50%',
+    transform: 'translateY(-50%)',
     right: '8rem'
 });
 
 const Layout = ({activeColor}) => (
     <PageWrapper color={activeColor}>
         <FloatingContainer>
-            <ColorPicker/>
+            <ColorPickerContainer/>
         </FloatingContainer>
     </PageWrapper>
 );
