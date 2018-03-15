@@ -4,9 +4,6 @@
   "private": true,
   "dependencies": {
     "@rematch/core": "^0.5.2",
-    "dotenv": "^5.0.1",
-    "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1",
     "glamor": "^2.20.40",
     "glamorous": "^4.12.1",
     "polished": "^1.9.2",
@@ -15,7 +12,6 @@
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
     "react-scripts": "1.1.1",
-    "react-test-renderer": "^16.2.0",
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6",
     "reselect": "^3.0.1"
@@ -27,10 +23,16 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "@types/enzyme": "^3.1.9",
+    "@types/jest": "^22.2.0",
     "@types/node": "^9.4.7",
     "@types/react": "^16.0.40",
     "@types/react-redux": "^5.0.15",
+    "dotenv": "^5.0.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "jest": "^23.0.0-alpha.0",
-    "jest-cli": "^23.0.0-alpha.0"
+    "jest-cli": "^23.0.0-alpha.0",
+    "react-test-renderer": "^16.2.0"
   }
 }
