@@ -24,7 +24,8 @@ const colors = {
         setActiveColor: (state, color) => ({
             ...state,
             activeColor: color
-        })
+        }),
+        updateSearchQuery: (state, query) => ({...state, searchQuery: query})
 
     },
     effects: {
@@ -50,8 +51,10 @@ export const getVisibleColors = createSelector(
         if (query.length < 3) {
             return [...colors].slice(0, 10)
         } else {
+            const normalizedQuery = query.replace('#', '');
+
             return [...colors].filter(color => {
-                return color.hex.contains(query) || color.name.contains(query);
+                return color.hex.includes(normalizedQuery) || color.name.includes(query);
             }).slice(0, 10);
         }
     }

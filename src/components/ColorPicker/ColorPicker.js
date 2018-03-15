@@ -12,6 +12,10 @@ import {IColor} from "../../models/colors";
 const Wrapper = glamorous.div({
     background: `linear-gradient(to bottom, ${colors.light}, ${rgba(colors.light, 0.6)})`,
     padding: '1rem',
+    height: '100%',
+    minHeight: '40rem',
+    display: 'flex',
+    flexDirection: 'column',
     boxShadow: `3px 3px 20px 3px ${rgba(colors.darkGray, 0.2)}`
 });
 
@@ -29,15 +33,15 @@ const inputStyleOverrides = css({
 });
 
 const listStylesOverrides = css({
-    margin: '2rem 0'
-})
+    margin: '2rem 0 auto 0'
+});
 
-const ColorPicker = ({colors, onAccept, onColorSelected, selectedColor}) => (
+const ColorPicker = ({colors, onAccept, onColorSelected, selectedColor, onInputChange}) => (
     <Wrapper>
         <Headline>
             Pick your fancy color!
         </Headline>
-        <Input className={inputStyleOverrides}/>
+        <Input className={inputStyleOverrides} onChange={onInputChange}/>
         <ColorList className={listStylesOverrides} items={colors} onColorClicked={onColorSelected} selectedColor={selectedColor}/>
         <Button onClick={onAccept}>Accept</Button>
     </Wrapper>
@@ -47,7 +51,8 @@ ColorPicker.propTypes = {
     colors: PropTypes.arrayOf(PropTypes.shape({})),
     onAccept: PropTypes.func.isRequired,
     onColorSelected: PropTypes.func.isRequired,
-    selectedColor: IColor
+    selectedColor: IColor,
+    onInputChange: PropTypes.func.isRequired
 };
 
 export default ColorPicker

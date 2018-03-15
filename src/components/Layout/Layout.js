@@ -22,7 +22,8 @@ const FloatingContainer = glamorous.aside({
     transform: 'translateY(-50%)',
     right: '8rem'
 });
-
+// TODO: Nice background effect with color label?
+// TODO: Normalize colors in the service
 const Layout = ({activeColor}) => (
     <PageWrapper color={activeColor}>
         <FloatingContainer>
