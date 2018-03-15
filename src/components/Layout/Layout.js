@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import ColorPickerContainer from "../ColorPicker/ColorPickerContainer";
-import {IColor} from "../../models/colors";
+import {IColor} from "../../models/Color.interface";
 import {ColorName, FloatingContainer, PageWrapper} from "./Layout.ui";
 
 /**
@@ -24,5 +24,5 @@ Layout.propTypes = {
 
 export default connect(state => ({
     colors: state.colors.colorsList,
-    activeColor: state.colors.activeColor
+    activeColor: state.activeColor
 }))(Layout);

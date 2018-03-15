@@ -2,7 +2,8 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import ColorPicker from './ColorPicker';
 import {connect} from "react-redux";
-import {getVisibleColors, IColor} from "../../models/colors";
+import {IColor} from "../../models/Color.interface";
+import {getVisibleColors} from "../../models/getSuggestedColors";
 
 class ColorPickerContainer extends Component {
     static defaultProps = {};
@@ -61,12 +62,12 @@ class ColorPickerContainer extends Component {
 
 const mapState = state => ({
     colors: getVisibleColors(state),
-    activeColor: state.colors.activeColor
+    activeColor: state.activeColor
 });
 
 const mapDispatch = dispatch => ({
-    setActiveColor: color => dispatch.colors.setActiveColor(color),
-    updateSearchQuery: query => dispatch.colors.updateSearchQuery(query)
+    setActiveColor: color => dispatch.activeColor.setActiveColor(color),
+    updateSearchQuery: query => dispatch.autosuggest.updateSearchQuery(query)
 });
 
 export default connect(mapState, mapDispatch)(ColorPickerContainer);

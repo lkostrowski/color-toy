@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import ColorList from "../ColorList/ColorList";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
-import {IColor} from "../../models/colors";
+import {IColor} from "../../models/Color.interface";
 import {Headline, inputStyleOverrides, listStylesOverrides, Wrapper} from "./ColorPicker.ui";
 
 /**

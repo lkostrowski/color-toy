@@ -1,20 +1,12 @@
-import PropTypes from 'prop-types';
 import ColorFetcher from '../services/ColorFetcher';
 import {FETCH_STATES} from "../constants";
-import {createSelector} from "reselect";
 
 const fetcher = new ColorFetcher();
 
 const colors = {
-    name: 'colors',
     state: {
         colorsList: [],
-        activeColor: {
-            name: '',
-            hex: '#fff'
-        },
         fetchState: null,
-        searchQuery: '',
     },
     reducers: {
         setFetchPending: (state) => ({...state, fetchState: FETCH_STATES.PENDING}),
@@ -24,12 +16,6 @@ const colors = {
             colorsList: payload
         }),
         setFetchFailed: (state) => ({...state, fetchState: FETCH_STATES.FAIL}),
-        setActiveColor: (state, color) => ({
-            ...state,
-            activeColor: color
-        }),
-        updateSearchQuery: (state, query) => ({...state, searchQuery: query})
-
     },
     effects: {
         async fetchColors() {
@@ -45,27 +31,5 @@ const colors = {
         }
     },
 };
-
-const colorsList = state => state.colors.colorsList;
-const searchQuery = state => state.colors.searchQuery;
-
-export const getVisibleColors = createSelector(
-    [colorsList, searchQuery], (colors, query) => {
-        if (query.length < 3) {
-            return [...colors].slice(0, 10)
-        } else {
-            return [...colors].filter(color => {
-                return color.hex.includes(query) || color.name.includes(query);
-            }).slice(0, 10);
-        }
-    }
-);
-
-const IColor = PropTypes.shape({
-    hex: PropTypes.string,
-    name: PropTypes.string
-});
-
-export {IColor};
 
 export default colors;

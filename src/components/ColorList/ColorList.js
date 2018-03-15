@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {IColor} from "../../models/colors";
+import {IColor} from "../../models/Color.interface";
 import {ColorLabel, ColorThumb, Item, List} from "./ColorList.ui";
 
 /**
