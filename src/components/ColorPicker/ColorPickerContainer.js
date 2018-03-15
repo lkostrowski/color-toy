@@ -16,8 +16,20 @@ class ColorPickerContainer extends Component {
         selectedColor: {}
     };
 
+    /**
+     * Autobind decorator could be useful
+     */
+    constructor() {
+        super();
+        this.onColorSelected = this.onColorSelected.bind(this);
+        this.onInputChange = this.onInputChange.bind(this);
+        this.onAcceptClick = this.onAcceptClick.bind(this);
+    }
+
     onAcceptClick() {
         if (!this.state.selectedColor) return;
+        if (this.props.activeColor.name === this.state.selectedColor.name) return;
+
         this.props.setActiveColor(this.state.selectedColor);
     }
 
@@ -27,24 +39,29 @@ class ColorPickerContainer extends Component {
         })
     }
 
-    onInputChange(query) {
+    onInputChange(e) {
+        const query = e.target.value;
         this.props.updateSearchQuery(query);
     }
 
     render() {
+        const {colors} = this.props;
+        const {selectedColor} = this.state;
+
         return (
-            <ColorPicker onColorSelected={color => this.onColorSelected(color)}
-                         colors={this.props.colors}
-                         selectedColor={this.state.selectedColor}
-                         onInputChange={e => this.onInputChange(e.target.value)}
-                         onAccept={e => this.onAcceptClick(e)}
+            <ColorPicker onColorSelected={this.onColorSelected}
+                         colors={colors}
+                         selectedColor={selectedColor}
+                         onInputChange={this.onInputChange}
+                         onAccept={this.onAcceptClick}
             />
         );
     }
 }
 
 const mapState = state => ({
-    colors: getVisibleColors(state)
+    colors: getVisibleColors(state),
+    activeColor: state.colors.activeColor
 });
 
 const mapDispatch = dispatch => ({
