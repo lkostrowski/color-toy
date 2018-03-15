@@ -8,7 +8,8 @@ import ColorPickerContainer from "../ColorPicker/ColorPickerContainer";
 const PageWrapper = glamorous.div({
         width: '100vw',
         height: '100vh',
-        position: 'relative'
+        position: 'relative',
+        transition: 'background-color 0.2s'
     },
     props => ({
         backgroundColor: rgba(props.color, 0.5)

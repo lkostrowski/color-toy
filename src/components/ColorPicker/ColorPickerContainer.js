@@ -1,8 +1,9 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import ColorPicker from './ColorPicker';
+import { select } from '@rematch/select'
 import {connect} from "react-redux";
-import {IColor} from "../../models/colors";
+import {getVisibleColors, IColor} from "../../models/colors";
 
 class ColorPickerContainer extends Component {
     static defaultProps = {};
@@ -36,7 +37,7 @@ class ColorPickerContainer extends Component {
 
 export default connect(
     state => ({
-        colors: state.colors.colorsList
+        colors: getVisibleColors(state)
     }), dispatch => ({
         setActiveColor: (color) => dispatch.colors.setActiveColor(color)
     }))(ColorPickerContainer);

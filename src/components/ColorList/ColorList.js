@@ -33,8 +33,8 @@ const ColorThumb = glamorous.div({
 
 const ColorLabel = glamorous.span({});
 
-const ColorList = ({items, selectedColor = {}, onColorClicked}) => (
-    <List>
+const ColorList = ({items, selectedColor = {}, onColorClicked, ...p}) => (
+    <List {...p}>
         {items.map(color => (
             <Item onClick={() => onColorClicked(color)}
                   key={color.name}

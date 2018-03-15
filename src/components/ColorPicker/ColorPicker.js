@@ -28,13 +28,17 @@ const inputStyleOverrides = css({
     textTransform: 'uppercase'
 });
 
+const listStylesOverrides = css({
+    margin: '2rem 0'
+})
+
 const ColorPicker = ({colors, onAccept, onColorSelected, selectedColor}) => (
     <Wrapper>
         <Headline>
             Pick your fancy color!
         </Headline>
         <Input className={inputStyleOverrides}/>
-        <ColorList items={colors} onColorClicked={onColorSelected} selectedColor={selectedColor}/>
+        <ColorList className={listStylesOverrides} items={colors} onColorClicked={onColorSelected} selectedColor={selectedColor}/>
         <Button onClick={onAccept}>Accept</Button>
     </Wrapper>
 );
