@@ -13,12 +13,12 @@ class ColorPickerContainer extends Component {
     };
 
     state = {
-        selectedColor: undefined
+        selectedColor: {}
     };
 
     onAcceptClick(e) {
         if (!this.state.selectedColor) return;
-        this.props.setActiveColor('#' + this.state.selectedColor.hex);
+        this.props.setActiveColor(this.state.selectedColor);
     }
 
     onColorSelected(color) {

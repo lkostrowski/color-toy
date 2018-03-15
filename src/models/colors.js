@@ -9,7 +9,10 @@ const colors = {
     name: 'colors',
     state: {
         colorsList: [],
-        activeColor: '#fff',
+        activeColor: {
+            name: '',
+            hex: '#fff'
+        },
         fetchState: null,
         searchQuery: '',
     },
@@ -51,10 +54,8 @@ export const getVisibleColors = createSelector(
         if (query.length < 3) {
             return [...colors].slice(0, 10)
         } else {
-            const normalizedQuery = query.replace('#', '');
-
             return [...colors].filter(color => {
-                return color.hex.includes(normalizedQuery) || color.name.includes(query);
+                return color.hex.includes(query) || color.name.includes(query);
             }).slice(0, 10);
         }
     }

@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import glamorous from 'glamorous';
 import {rgba} from "polished";
 import ColorPickerContainer from "../ColorPicker/ColorPickerContainer";
+import {IColor} from "../../models/colors";
 
 const PageWrapper = glamorous.div({
         width: '100vw',
@@ -22,10 +23,19 @@ const FloatingContainer = glamorous.aside({
     transform: 'translateY(-50%)',
     right: '8rem'
 });
-// TODO: Nice background effect with color label?
-// TODO: Normalize colors in the service
+
+const ColorName = glamorous.span({
+    margin: '2rem',
+    fontSize: '5rem'
+}, p => ({
+    color: rgba(p.color, 0.5)
+}));
+
 const Layout = ({activeColor}) => (
-    <PageWrapper color={activeColor}>
+    <PageWrapper color={activeColor.hex}>
+        <ColorName color={activeColor.hex}>
+            {activeColor.name}
+        </ColorName>
         <FloatingContainer>
             <ColorPickerContainer/>
         </FloatingContainer>
@@ -33,7 +43,7 @@ const Layout = ({activeColor}) => (
 );
 
 Layout.propTypes = {
-    activeColor: PropTypes.string
+    activeColor: IColor
 };
 
 export default connect(state => ({

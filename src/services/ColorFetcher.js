@@ -13,9 +13,16 @@ export default class ColorFetcher {
         try {
             const request = await this.http(this.endpoint);
 
-            return request.json();
+            const colorsData = await request.json();
+            const normalizedColors = colorsData.map(this.normalizeHexCode);
+
+            return normalizedColors;
         } catch (err) {
             console.error('Api fetch error', err);
         }
+    }
+
+    normalizeHexCode(code) {
+        return {...code, hex: `#${code.hex}`};
     }
 }

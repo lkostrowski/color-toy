@@ -19,7 +19,7 @@ const Item = glamorous.li({
         cursor: 'pointer',
     },
     p => ({
-        borderColor: p.active && `#${p.color}`
+        borderColor: p.active && p.color
     }));
 
 const ColorThumb = glamorous.div({
@@ -28,7 +28,7 @@ const ColorThumb = glamorous.div({
         marginRight: '1rem'
     },
     p => ({
-        background: `#${p.color}`
+        background: p.color
     }));
 
 const ColorLabel = glamorous.span({});
