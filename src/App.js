@@ -6,13 +6,14 @@ import {connect} from "react-redux";
 
 class App extends Component {
     static propTypes = {
-        dispatch: PropTypes.func
+        fetchColors: PropTypes.func.isRequired
     };
 
     componentDidMount() {
-        const {dispatch} = this.props;
+        const {fetchColors} = this.props;
 
-        dispatch.colors.fetchColors();
+        fetchColors();
+
     }
 
     render() {
@@ -22,4 +23,8 @@ class App extends Component {
     }
 }
 
-export default connect()(App);
+export {App};
+
+export default connect(null, dispatch => ({
+    fetchColors: dispatch.colors.fetchColors()
+}))(App);
