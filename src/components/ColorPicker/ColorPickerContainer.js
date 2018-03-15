@@ -16,7 +16,7 @@ class ColorPickerContainer extends Component {
         selectedColor: {}
     };
 
-    onAcceptClick(e) {
+    onAcceptClick() {
         if (!this.state.selectedColor) return;
         this.props.setActiveColor(this.state.selectedColor);
     }
@@ -28,7 +28,7 @@ class ColorPickerContainer extends Component {
     }
 
     onInputChange(query) {
-        this.props.updateSearchQuery(query)
+        this.props.updateSearchQuery(query);
     }
 
     render() {
@@ -37,15 +37,19 @@ class ColorPickerContainer extends Component {
                          colors={this.props.colors}
                          selectedColor={this.state.selectedColor}
                          onInputChange={e => this.onInputChange(e.target.value)}
-                         onAccept={e => this.onAcceptClick(e)}/>
-        )
+                         onAccept={e => this.onAcceptClick(e)}
+            />
+        );
     }
 }
 
-export default connect(
-    state => ({
-        colors: getVisibleColors(state)
-    }), dispatch => ({
-        setActiveColor: color => dispatch.colors.setActiveColor(color),
-        updateSearchQuery: query => dispatch.colors.updateSearchQuery(query)
-    }))(ColorPickerContainer);
+const mapState = state => ({
+    colors: getVisibleColors(state)
+});
+
+const mapDispatch = dispatch => ({
+    setActiveColor: color => dispatch.colors.setActiveColor(color),
+    updateSearchQuery: query => dispatch.colors.updateSearchQuery(query)
+});
+
+export default connect(mapState, mapDispatch)(ColorPickerContainer);

@@ -1,25 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import glamorous from 'glamorous';
-import colors from "../../colors";
+import {InputContainer} from "./Input.ui";
 
-const InputContainer = glamorous.input({
-    display: 'block',
-    width: '100%',
-    height: '3rem',
-    background: colors.white,
-    outline: 'none',
-    border: `1px solid ${colors.lightGray}`,
-    fontSize: '1.8rem',
-    color: colors.midGray,
-    letterSpacing: '0.05em',
-    padding: '0 1rem'
-});
-
-const Input = ({...rest}) => (
-    <InputContainer {...rest} />
+const Input = ({...props}) => (
+    <InputContainer {...props} />
 );
 
-Input.propTypes = {}
+Input.propTypes = {};
 
 export default Input;
