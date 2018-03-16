@@ -1,6 +1,7 @@
 {
   "name": "color-toy",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "Interview test task",
   "private": true,
   "dependencies": {
     "@rematch/core": "^0.5.2",
