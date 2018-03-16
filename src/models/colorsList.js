@@ -3,7 +3,7 @@ import {FETCH_STATES} from "../constants";
 
 const fetcher = new ColorFetcher();
 
-const colors = {
+const colorsList = {
     state: {
         colorsList: [],
         fetchState: null,
@@ -18,7 +18,7 @@ const colors = {
         setFetchFailed: (state) => ({...state, fetchState: FETCH_STATES.FAIL}),
     },
     effects: {
-        async fetchColors() {
+        async fetchColors(fetcher = fetcher) {
             this.setFetchPending();
 
             try {
@@ -32,4 +32,4 @@ const colors = {
     },
 };
 
-export default colors;
+export default colorsList;
