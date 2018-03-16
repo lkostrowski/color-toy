@@ -1,6 +1,6 @@
 import {createSelector} from "reselect";
 
-const colorsList = state => state.colors.colorsList;
+const colorsList = state => state.colorsList.colorsList;
 const searchQuery = state => state.autosuggest.searchQuery;
 
 const limit = 10;

@@ -2,7 +2,7 @@ import {getVisibleColors} from './getSuggestedColors';
 
 describe('Suggested/filtered colors selector', function () {
     let state = {
-        colors: {
+        colorsList: {
             colorsList: []
         },
         autosuggest: {
@@ -11,7 +11,7 @@ describe('Suggested/filtered colors selector', function () {
     };
 
     for (let i = 0; i <= 20; i++) {
-        state.colors.colorsList.push({
+        state.colorsList.colorsList.push({
             name: `color${i}`,
             hex: '#000000'
         })

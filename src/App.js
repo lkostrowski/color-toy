@@ -26,5 +26,5 @@ class App extends Component {
 export {App};
 
 export default connect(null, dispatch => ({
-    fetchColors: dispatch.colors.fetchColors
+    fetchColors: dispatch.colorsList.fetchColors
 }))(App);
