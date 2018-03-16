@@ -12,11 +12,3 @@ css.global('*', {
     fontWeight: '300',
     fontFamily: 'inherit'
 });
-
-css.insert(`
-  @font-face {
-    font-family: 'Montserrat';
-    src: url('/Montserrat-Light.ttf');
-    font-weight: 300;
-  }
-`);
