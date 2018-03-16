@@ -4,6 +4,12 @@ import activeColor from './activeColor';
 import autosuggest from './autosuggest';
 import {createLogger} from 'redux-logger';
 
+const middlewares = [];
+
+if (process.env.NODE_ENV === 'development') {
+    middlewares.push(createLogger())
+}
+
 const store = init({
     models: {
         colorsList,
@@ -11,9 +17,7 @@ const store = init({
         activeColor
     },
     redux: {
-        middlewares: [
-            createLogger()
-        ]
+        middlewares
     }
 });
 

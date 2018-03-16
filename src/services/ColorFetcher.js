@@ -1,8 +1,4 @@
-/**
- * It should be provided by .env but it requires eject
- * @type {string}
- */
-const defaultApiUrl = 'https://www.mocky.io/v2/5a37a7403200000f10eb6a2d';
+const defaultApiUrl = process.env.REACT_APP_DEFAULT_API_URL;
 
 export default class ColorFetcher {
     endpoint = defaultApiUrl;
