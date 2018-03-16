@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "Interview test task",
   "private": true,
+  "homepage": "https://lkostrowski.github.io/color-toy/",
   "dependencies": {
     "@rematch/core": "^0.5.2",
+    "gh-pages": "^1.1.0",
     "glamor": "^2.20.40",
     "glamorous": "^4.12.1",
     "polished": "^1.9.2",
@@ -21,7 +23,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
     "@types/enzyme": "^3.1.9",
@@ -29,7 +33,6 @@
     "@types/node": "^9.4.7",
     "@types/react": "^16.0.40",
     "@types/react-redux": "^5.0.15",
-    "dotenv": "^5.0.1",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "jest": "^23.0.0-alpha.0",
