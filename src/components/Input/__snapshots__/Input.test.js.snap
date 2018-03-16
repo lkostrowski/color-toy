@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input component render expected html 1`] = `
+<input
+  className="css-1qyn3bs"
+  type="text"
+/>
+`;

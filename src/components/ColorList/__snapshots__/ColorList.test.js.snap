@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ColorList component render expected html 1`] = `
+<ul
+  className="css-e03p5w"
+>
+  <li
+    className="css-1oxu79"
+    onClick={[Function]}
+  >
+    <div
+      className="css-x2kxff"
+    />
+    <span
+      className="css-nil"
+    >
+      test-color1
+    </span>
+  </li>
+  <li
+    className="css-1x7obq3"
+    onClick={[Function]}
+  >
+    <div
+      className="css-gbdd7j"
+    />
+    <span
+      className="css-nil"
+    >
+      test-color2
+    </span>
+  </li>
+</ul>
+`;

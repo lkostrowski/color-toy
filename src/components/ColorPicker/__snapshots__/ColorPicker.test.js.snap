@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ColorPicker component render expected html 1`] = `
+<div
+  className="css-1ctrea"
+>
+  <h1
+    className="css-1kkvtqk"
+  >
+    Pick your fancy color!
+  </h1>
+  <input
+    className="css-1pwtocw"
+    onChange={[Function]}
+  />
+  <ul
+    className="css-1s18ngn"
+  >
+    <li
+      className="css-1oxu79"
+      onClick={[Function]}
+    >
+      <div
+        className="css-x2kxff"
+      />
+      <span
+        className="css-nil"
+      >
+        test-color1
+      </span>
+    </li>
+    <li
+      className="css-1x7obq3"
+      onClick={[Function]}
+    >
+      <div
+        className="css-gbdd7j"
+      />
+      <span
+        className="css-nil"
+      >
+        test-color2
+      </span>
+    </li>
+  </ul>
+  <button
+    className="css-1kigtsu"
+    onClick={[Function]}
+  >
+    Accept
+  </button>
+</div>
+`;

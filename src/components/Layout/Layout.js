@@ -19,10 +19,11 @@ const Layout = ({activeColor}) => (
 );
 
 Layout.propTypes = {
-    activeColor: IColor
+    activeColor: IColor,
 };
 
 export default connect(state => ({
-    colors: state.colors.colorsList,
     activeColor: state.activeColor
 }))(Layout);
+
+export {Layout};
