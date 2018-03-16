@@ -25,15 +25,13 @@ describe('Suggested/filtered colors selector', function () {
         expect(results.length).toBe(10);
     });
 
-    it.skip('Returns filtered element', () => {
+    it('Returns filtered element', () => {
         const newState = {...state};
-        newState.autosuggest.searchQuery = 'color1';
+        newState.autosuggest.searchQuery = 'color11';
 
         const results = getVisibleColors(newState);
 
-        console.log(results)
-
         expect(results.length).toBe(1);
-        expect(results[0].name).toBe('color1');
+        expect(results[0].name).toBe('color11');
     })
 });
