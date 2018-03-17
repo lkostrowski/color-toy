@@ -8,12 +8,14 @@ module.exports = {
     plugins: [
         "babel",
         "jest",
+        "class-property"
     ],
     globals: {
         describe: true,
         it: true,
         test: true,
     },
+    parser: "babel-eslint",
     rules: {
         indent: ['error', 4],
         'react/jsx-indent': [2, 4],
@@ -28,6 +30,7 @@ module.exports = {
         'react/require-default-props': [0, {}],
         'no-unused-expressions': ['error', {
             allowTaggedTemplates: true
-        }]
+        }],
+        'class-property/class-property-semicolon': ['error', 'always']
     },
 };

@@ -1,30 +1,29 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
-import Layout from "./components/Layout/Layout";
-import {connect} from "react-redux";
+import Layout from './components/Layout/Layout';
 
 class App extends Component {
     static propTypes = {
-        fetchColors: PropTypes.func.isRequired
+        fetchColors: PropTypes.func.isRequired,
     };
 
     componentDidMount() {
-        const {fetchColors} = this.props;
+        const { fetchColors } = this.props;
 
         fetchColors();
-
     }
 
     render() {
         return (
-            <Layout/>
+            <Layout />
         );
     }
 }
 
-export {App};
+export { App };
 
 export default connect(null, dispatch => ({
-    fetchColors: dispatch.colorsList.fetchColors
+    fetchColors: dispatch.colorsList.fetchColors,
 }))(App);
