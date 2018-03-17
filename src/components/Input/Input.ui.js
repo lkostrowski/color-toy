@@ -1,5 +1,5 @@
-import glamorous from "glamorous";
-import colors from "../../colors";
+import glamorous from 'glamorous';
+import colors from '../../colors';
 
 export const InputContainer = glamorous.input({
     display: 'block',
@@ -11,5 +11,5 @@ export const InputContainer = glamorous.input({
     fontSize: '1.8rem',
     color: colors.midGray,
     letterSpacing: '0.05em',
-    padding: '0 1rem'
+    padding: '0 1rem',
 });

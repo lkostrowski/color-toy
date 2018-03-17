@@ -1,7 +1,7 @@
 import React from 'react';
-import {InputContainer} from "./Input.ui";
+import { InputContainer } from './Input.ui';
 
-const Input = ({...props}) => (
+const Input = ({ ...props }) => (
     <InputContainer {...props} />
 );
 

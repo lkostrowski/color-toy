@@ -1,4 +1,4 @@
-import {css} from 'glamor';
+import { css } from 'glamor';
 
 css.global('html,body', {
     fontFamily: 'Montserrat, sans-serif',
@@ -10,5 +10,5 @@ css.global('html,body', {
 css.global('*', {
     boxSizing: 'inherit',
     fontWeight: '300',
-    fontFamily: 'inherit'
+    fontFamily: 'inherit',
 });

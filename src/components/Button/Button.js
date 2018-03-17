@@ -1,18 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {ButtonWrapper} from "./Button.ui";
+import { ButtonWrapper } from './Button.ui';
 
 /**
  * Standard button component
  */
-const Button = ({children, ...props}) => (
+const Button = ({ children, ...props }) => (
     <ButtonWrapper {...props}>
         {children}
     </ButtonWrapper>
 );
 
 Button.propTypes = {
-    children: PropTypes.any
+    children: PropTypes.any,
 };
 
 export default Button;

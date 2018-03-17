@@ -1,26 +1,30 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import ColorList from "../ColorList/ColorList";
-import Input from "../Input/Input";
-import Button from "../Button/Button";
-import {IColor} from "../../models/Color.interface";
-import {Headline, inputStyleOverrides, listStylesOverrides, Wrapper} from "./ColorPicker.ui";
+import React from 'react';
+import PropTypes from 'prop-types';
+import ColorList from '../ColorList/ColorList';
+import Input from '../Input/Input';
+import Button from '../Button/Button';
+import { IColor } from '../../models/Color.interface';
+import { Headline, inputStyleOverrides, listStylesOverrides, Wrapper } from './ColorPicker.ui';
 
 /**
  * Color picker component, containing headline, search input and colors list with button
  */
-const ColorPicker = ({colors, onAccept, onColorSelected, selectedColor, onInputChange}) => (
+const ColorPicker = ({
+    colors, onAccept, onColorSelected, selectedColor, onInputChange,
+}) => (
     <Wrapper>
         <Headline>
             Pick your fancy color!
         </Headline>
-        <Input className={inputStyleOverrides}
-               onChange={onInputChange}
+        <Input
+            className={inputStyleOverrides}
+            onChange={onInputChange}
         />
-        <ColorList className={listStylesOverrides}
-                   items={colors}
-                   onColorClicked={onColorSelected}
-                   selectedColor={selectedColor}
+        <ColorList
+            className={listStylesOverrides}
+            items={colors}
+            onColorClicked={onColorSelected}
+            selectedColor={selectedColor}
         />
         <Button onClick={onAccept}>Accept</Button>
     </Wrapper>
@@ -31,7 +35,7 @@ ColorPicker.propTypes = {
     onAccept: PropTypes.func.isRequired,
     onColorSelected: PropTypes.func.isRequired,
     selectedColor: IColor,
-    onInputChange: PropTypes.func.isRequired
+    onInputChange: PropTypes.func.isRequired,
 };
 
-export default ColorPicker
+export default ColorPicker;

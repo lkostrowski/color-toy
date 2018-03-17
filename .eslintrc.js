@@ -26,6 +26,7 @@ module.exports = {
             optionalDependencies: false,
             peerDependencies: false,
         }],
+        'import/no-named-as-default': 'never',
         "react/jsx-indent-props": [2, 4],
         'react/require-default-props': [0, {}],
         'no-unused-expressions': ['error', {

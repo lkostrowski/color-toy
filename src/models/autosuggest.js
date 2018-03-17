@@ -1,8 +1,8 @@
 export default {
     state: {
-        searchQuery: ''
+        searchQuery: '',
     },
     reducers: {
-        updateSearchQuery: (state, query) => ({...state, searchQuery: query})
-    }
+        updateSearchQuery: (state, query) => ({ ...state, searchQuery: query }),
+    },
 };

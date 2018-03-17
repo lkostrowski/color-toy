@@ -1,4 +1,4 @@
-import glamorous from "glamorous";
+import glamorous from 'glamorous';
 
 export const List = glamorous.ul({
     margin: 0,
@@ -6,7 +6,8 @@ export const List = glamorous.ul({
     listStyle: 'none',
 });
 
-export const Item = glamorous.li({
+export const Item = glamorous.li(
+    {
         display: 'flex',
         alignItems: 'center',
         height: '2rem',
@@ -16,18 +17,19 @@ export const Item = glamorous.li({
         cursor: 'pointer',
     },
     p => ({
-        borderColor: p.active && p.color
-    })
+        borderColor: p.active && p.color,
+    }),
 );
 
-export const ColorThumb = glamorous.div({
+export const ColorThumb = glamorous.div(
+    {
         width: '1rem',
         height: '1rem',
-        marginRight: '1rem'
+        marginRight: '1rem',
     },
     p => ({
-        background: p.color
-    })
+        background: p.color,
+    }),
 );
 
 export const ColorLabel = glamorous.span({});

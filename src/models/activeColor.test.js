@@ -13,10 +13,10 @@ describe('Active color model', () => {
     it('Modifies state after mutate function called', () => {
         const prevState = {
             name: '',
-            hex: '#fff'
+            hex: '#fff',
         };
 
-        const newState = colorsModel.reducers.setActiveColor(prevState, {name: 'test-name', hex: 'test-hex'});
+        const newState = colorsModel.reducers.setActiveColor(prevState, { name: 'test-name', hex: 'test-hex' });
 
         expect(newState.name).toBe('test-name');
         expect(newState.hex).toBe('test-hex');

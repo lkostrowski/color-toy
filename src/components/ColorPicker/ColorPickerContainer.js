@@ -1,9 +1,9 @@
-import React, {Component} from 'react'
-import PropTypes from 'prop-types'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import ColorPicker from './ColorPicker';
-import {connect} from "react-redux";
-import {IColor} from "../../models/Color.interface";
-import {getVisibleColors} from "../../models/getSuggestedColors";
+import { connect } from 'react-redux';
+import { IColor } from '../../models/Color.interface';
+import { getVisibleColors } from '../../models/getSuggestedColors';
 
 class ColorPickerContainer extends Component {
     static defaultProps = {};
@@ -14,7 +14,7 @@ class ColorPickerContainer extends Component {
     };
 
     state = {
-        selectedColor: {}
+        selectedColor: {},
     };
 
     /**
@@ -36,8 +36,8 @@ class ColorPickerContainer extends Component {
 
     onColorSelected(color) {
         this.setState({
-            selectedColor: color
-        })
+            selectedColor: color,
+        });
     }
 
     onInputChange(e) {
@@ -46,15 +46,16 @@ class ColorPickerContainer extends Component {
     }
 
     render() {
-        const {colors} = this.props;
-        const {selectedColor} = this.state;
+        const { colors } = this.props;
+        const { selectedColor } = this.state;
 
         return (
-            <ColorPicker onColorSelected={this.onColorSelected}
-                         colors={colors}
-                         selectedColor={selectedColor}
-                         onInputChange={this.onInputChange}
-                         onAccept={this.onAcceptClick}
+            <ColorPicker
+                onColorSelected={this.onColorSelected}
+                colors={colors}
+                selectedColor={selectedColor}
+                onInputChange={this.onInputChange}
+                onAccept={this.onAcceptClick}
             />
         );
     }
@@ -62,13 +63,13 @@ class ColorPickerContainer extends Component {
 
 const mapState = state => ({
     colors: getVisibleColors(state),
-    activeColor: state.activeColor
+    activeColor: state.activeColor,
 });
 
 const mapDispatch = dispatch => ({
     setActiveColor: color => dispatch.activeColor.setActiveColor(color),
-    updateSearchQuery: query => dispatch.autosuggest.updateSearchQuery(query)
+    updateSearchQuery: query => dispatch.autosuggest.updateSearchQuery(query),
 });
 
 export default connect(mapState, mapDispatch)(ColorPickerContainer);
-export {ColorPickerContainer}
+export { ColorPickerContainer };

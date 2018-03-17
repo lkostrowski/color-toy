@@ -1,4 +1,4 @@
-import {createSelector} from "reselect";
+import { createSelector } from 'reselect';
 
 const colorsList = state => state.colorsList.colorsList;
 const searchQuery = state => state.autosuggest.searchQuery;
@@ -16,5 +16,5 @@ export const getVisibleColors = createSelector(
             : [...colors]
                 .filter(suggestionFilter)
                 .slice(0, limit);
-    }
+    },
 );

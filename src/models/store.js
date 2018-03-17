@@ -1,24 +1,24 @@
-import {init} from '@rematch/core'
+import { init } from '@rematch/core';
+import { createLogger } from 'redux-logger';
 import colorsList from './colorsList';
 import activeColor from './activeColor';
 import autosuggest from './autosuggest';
-import {createLogger} from 'redux-logger';
 
 const middlewares = [];
 
 if (process.env.NODE_ENV === 'development') {
-    middlewares.push(createLogger())
+    middlewares.push(createLogger());
 }
 
 const store = init({
     models: {
         colorsList,
         autosuggest,
-        activeColor
+        activeColor,
     },
     redux: {
-        middlewares
-    }
+        middlewares,
+    },
 });
 
-export {store};
+export { store };

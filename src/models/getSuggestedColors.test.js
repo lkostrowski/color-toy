@@ -1,20 +1,20 @@
-import {getVisibleColors} from './getSuggestedColors';
+import { getVisibleColors } from './getSuggestedColors';
 
-describe('Suggested/filtered colors selector', function () {
-    let state = {
+describe('Suggested/filtered colors selector', () => {
+    const state = {
         colorsList: {
-            colorsList: []
+            colorsList: [],
         },
         autosuggest: {
-            searchQuery: ''
-        }
+            searchQuery: '',
+        },
     };
 
     for (let i = 0; i <= 20; i++) {
         state.colorsList.colorsList.push({
             name: `color${i}`,
-            hex: '#000000'
-        })
+            hex: '#000000',
+        });
     }
 
     it('Returns first 10 items if search query < 2', () => {
@@ -26,12 +26,12 @@ describe('Suggested/filtered colors selector', function () {
     });
 
     it('Returns filtered element', () => {
-        const newState = {...state};
+        const newState = { ...state };
         newState.autosuggest.searchQuery = 'color11';
 
         const results = getVisibleColors(newState);
 
         expect(results.length).toBe(1);
         expect(results[0].name).toBe('color11');
-    })
+    });
 });

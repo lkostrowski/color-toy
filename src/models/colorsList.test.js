@@ -1,5 +1,5 @@
 import colorsModel from './colorsList';
-import {FETCH_STATES} from "../constants";
+import { FETCH_STATES } from '../constants';
 
 describe('Colors List model', () => {
     it('Has default state', () => {
@@ -44,12 +44,12 @@ describe('Colors List model', () => {
         const testColorsList = [
             {
                 name: 'color1',
-                hex: '#fff'
+                hex: '#fff',
             },
             {
                 name: 'color2',
-                hex: '#000'
-            }
+                hex: '#000',
+            },
         ];
 
         const newState = colorsModel.reducers.setFetchSuccess(prevState, testColorsList);
@@ -57,5 +57,4 @@ describe('Colors List model', () => {
         expect(newState.fetchState).toBe(FETCH_STATES.SUCCESS);
         expect(newState.colorsList).toBe(testColorsList);
     });
-
 });

@@ -1,5 +1,5 @@
-import glamorous from "glamorous";
-import colors from "../../colors";
+import glamorous from 'glamorous';
+import colors from '../../colors';
 
 export const ButtonWrapper = glamorous.button({
     background: colors.green,
@@ -12,6 +12,6 @@ export const ButtonWrapper = glamorous.button({
     cursor: 'pointer',
     ':focus': {
         boxShadow: 'none',
-        outline: 'none'
-    }
+        outline: 'none',
+    },
 });

@@ -9,20 +9,23 @@ describe('ColorPicker component', () => {
         const testColors = [
             {
                 name: 'test-color1',
-                hex: '#ffffff'
+                hex: '#ffffff',
             },
             {
                 name: 'test-color2',
-                hex: '#000000'
-            }
+                hex: '#000000',
+            },
         ];
         const testActiveColor = testColors[0];
 
 
-        const markup = renderer.create(
-            <ColorPicker onColorSelected={noop} onAccept={noop} onInputChange={noop}
-                         selectedColor={testActiveColor} colors={testColors}/>
-        ).toJSON();
+        const markup = renderer.create(<ColorPicker
+            onColorSelected={noop}
+            onAccept={noop}
+            onInputChange={noop}
+            selectedColor={testActiveColor}
+            colors={testColors}
+        />).toJSON();
 
         expect(markup).toMatchSnapshot();
     });

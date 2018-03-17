@@ -11,7 +11,7 @@ describe('Active color model', () => {
 
     it('Modifies state after mutate function called', () => {
         const prevState = {
-            searchQuery: ''
+            searchQuery: '',
         };
 
         const newState = autosuggestModel.reducers.updateSearchQuery(prevState, 'test');
